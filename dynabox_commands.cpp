@@ -71,6 +71,7 @@ void Dynabox::CommandGetSetState()
 	uint8_t position = mb.GetHoldingRegister(LOCATIONS_NUMBER + current_address);
 	if(position > 0)
 	{
+		mb.UpdateHoldingRegister(LOCATIONS_NUMBER + current_address, 0);
 		comm.Prepare(current_address, 0xC0 + position);
 	}
 	else
